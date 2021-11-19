@@ -15,37 +15,49 @@
                 <p>pay</p>
               </div>    
               <h2>Gateway for payment</h2>
-              <form name="payment-form" method="post">
-                <div class="card space icon-relative">
-                  <label class="label">Card holder Name:</label>
-                  <input type="text" class="input1" placeholder="Name on Card" maxlength="16">
+              <form id="form" class ="form" name="payment-form">
+                <div class="form-control">
+                  <label>Card holder Name:</label>
+                  <input type="text" class="input1" placeholder="Name on Card" maxlength="16" id="nameoncard">
                   <i class="fas fa-user"></i>
+                  <i class="fas fa-check-circle"></i>
+			            <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
                 </div>
-                <div class="card space icon-relative">
-                  <label class="label">Card number:</label>
-                  <input type="text" class="input1" data-mask="0000 0000 0000 0000" placeholder="Card Number">
+                <div class="form-control">
+                  <label>Card number:</label>
+                  <input type="text" class="input1" data-mask="0000 0000 0000 0000" placeholder="Card Number" maxlength="16" id="cardnumber">
                   <i class="far fa-credit-card"></i>
+                  <i class="fas fa-check-circle"></i>
+			            <i class="fas fa-exclamation-circle"></i>
+                  <small>Error message</small>
                 </div>
-                <div class="card-grp space">
+                <div class="form-control">
                   <div class="card-item icon-relative">
-                    <label class="label">Expiry date:</label>
-                    <input type="text" name="expiry-data" class="input1"  placeholder="00 / 00">
+                    <label>Expiry date:</label>
+                    <input type="text" name="expiry-data" class="input1"  placeholder="00 / 00" id="expirydate">
                     <i class="far fa-calendar-alt"></i>
+                    <i class="fas fa-check-circle"></i>
+			              <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
                   </div>
-                  <div class="card-item icon-relative">
-                    <label class="label">CVV:</label>
-                    <input type="text" class="input1" data-mask="000" placeholder="000" maxlength="3">
+                  <div class="form-control">
+                    <label>CVV:</label>
+                    <input type="text" class="input1" data-mask="000" placeholder="000" maxlength="3" id="cvv">
                     <i class="fas fa-lock"></i>
+                    <i class="fas fa-check-circle"></i>
+			              <i class="fas fa-exclamation-circle"></i>
+                    <small>Error message</small>
                   </div>
                 </div>
                   
-                <input type="submit" value="pay" class="btn" id="submit" onclick="paymentdone()">
-                
+                <button>Pay</button>
+              </form>
               </div>
             </div>
           </div>
 
-          <script src="js/script.js"></script>
+          <script src="js/pscript.js"></script>
         </form>
     </body>
 </html>
