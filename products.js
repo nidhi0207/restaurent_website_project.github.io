@@ -57,7 +57,7 @@ var products = {
   1210: {
     name : "coffee",
     desc : "Prepared And Presented In A Variety Of Ways Espresso, French Press, Caffè Latte",
-    img : "coffee.jpeg",
+    img : "coffee.jpg",
     price : 150
   },
 
