@@ -1,8 +1,6 @@
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
- 
-
-
+   
 menu.onclick = () =>{
 
     menu.classList.toggle('fa-times');
@@ -46,17 +44,4 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
  
-
-
  
-
-
-
-$("input[name='expiry-data']").mask("00 / 00");
-
-
-function paymentdone() {
-    alert("Payment done successfully");
-    document.submit();
-    document.reset();
-    }
