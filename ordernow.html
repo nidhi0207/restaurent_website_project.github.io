@@ -6,6 +6,26 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap">
 
         <link rel="stylesheet" href="css/style.css">
+
+        <script>
+ 
+            function validate() {
+                var yourname = document.orderform.yourname.value.trim();
+                var yournumber = document.orderform.yournumber.value.trim();
+                var youraddress = document.orderform.youraddress.value.trim();
+                var email = document.orderform.youremail.value.trim();
+                if (yourname =='' || yournumber =='' || email =='' || youraddress =='')
+                {
+                    alert("Please fill the details correctly !");
+                    return false;
+                }
+                else{
+                    window.open("paymentgateway.html");
+                }
+              
+            
+            }
+             </script>
     </head>
 
     <body>
@@ -15,51 +35,41 @@
             <h3 class="heading"> order <span>Now</span></h3>
             <h1 class="heading"> free <span>and </span>fast </h1>
         
-            <form action="">
+            <form name="orderform" action="">
         
                 <div class="inputBox">
                     <div class="input">
                         <span>your name</span>
-                        <input type="text" placeholder="your name" required>
+                        <input type="text" name='yourname' placeholder="your name" > 
                     </div>
                     <div class="input">
                         <span>your number</span>
-                        <input type="number" placeholder="your number" required />
+                        <input type="number" name="yournumber" placeholder="your number" >
                     </div>
                 </div>
+                
                 <div class="inputBox">
                     <div class="input">
-                        <span>your order</span>
-                        <input type="text" placeholder="food name" required />
+                        <span>Your Email</span>
+                        <input type="email" name="youremail" placeholder="abc@gmail.com" >
                     </div>
-                    <div class="input">
-                        <span>additional food</span>
-                        <input type="test" placeholder="anything else">
-                    </div>
-                </div>
-                <div class="inputBox">
-                    <div class="input">
-                        <span>Quantity</span>
-                        <input type="number" placeholder="quantity" required />
-                    </div>
-                    <div class="input">
-                        <span>date and time</span>
-                        <input type="datetime-local">
-                    </div>
+                    
                 </div>
                 <div class="inputBox">
                     <div class="input">
                         <span>your address</span>
-                        <textarea name="" placeholder="your address" id="" cols="30" rows="10" required ></textarea>
+                        <textarea name="youraddress" placeholder="your address" id="" cols="30" rows="10"></textarea>
                     </div>
                 </div>
         
-                <a href="paymentgateway.html" class="btn">Go for payment</a>
+                <input type="button" value="Go for payment" class="btn" onclick="return validate()" >
+
+
         
             </form>
         
         </section>
 
-        <script src="/js/script.js"></script>
+       
     </body>
 </html>
