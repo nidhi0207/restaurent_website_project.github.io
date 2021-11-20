@@ -14,16 +14,41 @@
                 var yournumber = document.orderform.yournumber.value.trim();
                 var youraddress = document.orderform.youraddress.value.trim();
                 var email = document.orderform.youremail.value.trim();
-                if (yourname =='' || yournumber =='' || email =='' || youraddress =='')
+                
+                if(!isname(yourname))
                 {
-                    alert("Please fill the details correctly !");
+                    alert("Please enter alphabet only in name!");
                     return false;
                 }
-                else{
+                else if(!isnumber(yournumber))
+                {
+                    alert("Error Mobile number not valid!");
+                    return false;
+                }
+                else if(!isemail(email))
+                {
+                    alert("Email is not valid !");
+                    return false;
+                }    
+                if (yourname =='' || yournumber =='' || email =='' || youraddress =='')
+                {
+                    alert("Please fill all the details !");
+                    return false;
+                }           
+                else {
                     window.open("paymentgateway.html");
                 }
-              
-            
+                function isname(nameoncard)
+                    {
+                    return /[a-zA-Z]/.test(yourname);
+                    }
+                    function isnumber(cardnumber) {
+	                    return /^([0-9]{10})$/.test(yournumber);
+                    }
+                    function isemail(email)
+                    {
+                        return /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]/.test(email);
+                    }
             }
              </script>
     </head>
@@ -39,19 +64,19 @@
         
                 <div class="inputBox">
                     <div class="input">
-                        <span>your name</span>
+                        <span>your name</span>x
                         <input type="text" name='yourname' placeholder="your name" > 
                     </div>
                     <div class="input">
                         <span>your number</span>
-                        <input type="number" name="yournumber" placeholder="your number" >
+                        <input type="tel" name="yournumber" placeholder="your number" maxlength="10"  >
                     </div>
                 </div>
                 
                 <div class="inputBox">
                     <div class="input">
                         <span>Your Email</span>
-                        <input type="email" name="youremail" placeholder="abc@gmail.com" >
+                        <input type="text" name="youremail" placeholder="abc@gmail.com" >
                     </div>
                     
                 </div>
